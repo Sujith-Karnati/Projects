@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Chatbot</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 50px; }
+        body {background: linear-gradient(to right, #ff7e5f, #feb47b);}
+        #chatbox { width: 1000px; height: 500px; border: 1px solid black; overflow-y: scroll; padding: 10px; margin: auto; background-color: rgb(255, 255, 255); }
+        input { width: 80%; padding: 5px; }
+        button { padding: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Student Details Chatbot</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            let userText = document.getElementById("userInput").value;
+            let chatbox = document.getElementById("chatbox");
+
+            chatbox.innerHTML += "<p><b>You:</b> " + userText + "</p>";
+
+            fetch("/chatbot", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userText })
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatbox.innerHTML += "<p><b>Bot:</b> " + data.response + "</p>";
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
+
+            document.getElementById("userInput").value = "";
+        }
+    </script>
+</body>
+</html>

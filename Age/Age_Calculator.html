@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <style>
+    body {
+        background-color: #4623d2; /* Light blue background */
+        color: #333; /* Dark gray text */
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+    }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<style>
+    body {
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+        color: white;
+    }
+</style>
+<body>
+    <h1>Age Calculator</h1>
+    <form method="post">
+        <label for="birthdate">Enter your birthdate:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+        <button type="submit">Calculate Age</button>
+    </form>
+
+    {% if age is not none %}
+        <h2>Your age is: {{ age }} years</h2>
+    {% endif %}
+</body>
+</html>

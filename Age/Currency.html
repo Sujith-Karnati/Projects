@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Curency.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Currency Converter</h2>
+        
+        <!-- Dark Mode Toggle -->
+        <div class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <label for="theme-toggle" class="theme-label"></label>
+        </div>
+        
+        <input type="number" id="amount" placeholder="Enter amount" required>
+
+        <div class="dropdowns">
+            <select id="from_currency">
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="GBP">GBP - British Pound</option>
+            </select>
+
+            <span class="arrow">⇄</span>
+
+            <select id="to_currency">
+                <option value="INR">INR - Indian Rupee</option>
+                <option value="USD">USD - US Dollar</option>
+                <option value="EUR">EUR - Euro</option>
+                <option value="GBP">GBP - British Pound</option>
+            </select>
+        </div>
+
+        <button onclick="convertCurrency()">Convert</button>
+        
+        <h3 id="result"></h3>
+    </div>
+
+    <script src="{{ url_for('static', filename='Curency.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+/* Global Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+/* Main Container */
+.container {
+    margin: 150px auto;
+    padding: 20px;
+    background: white;
+    width: 350px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/* Dark Mode Container */
+body.dark-mode .container {
+    background: #333;
+}
+
+/* Input & Select */
+input, select, button {
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Dark Mode Inputs */
+body.dark-mode input, 
+body.dark-mode select, 
+body.dark-mode button {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+}
+
+/* Swap Arrow */
+.arrow {
+    font-size: 20px;
+    margin: 0 10px;
+}
+
+/* Convert Button */
+button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Dark Mode Button */
+body.dark-mode button {
+    background-color: #ff9800;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Theme Toggle */
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-label {
+    width: 50px;
+    height: 25px;
+    background: #ccc;
+    display: inline-block;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.theme-label:after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: white;
+    position: absolute;
+    left: 3px;
+    top: 2.5px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+/* Dark Mode Switch */
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked + .theme-label {
+    background: #007BFF;
+}
+
+input[type="checkbox"]:checked + .theme-label:after {
+    left: 26px;
+}
